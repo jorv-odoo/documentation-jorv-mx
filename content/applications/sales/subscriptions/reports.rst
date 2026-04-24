@@ -6,10 +6,10 @@ Subscription reports
 .. |ARR| replace:: :abbr:`ARR (Annual Recurring Revenue)`
 
 The Odoo **Subscriptions** app provides a series of reporting pages to help companies analyze how
-subscriptions are performing. There are four different pages: *Subscriptions Analysis*, *Retention
+subscriptions are performing. There are four different reports: *Subscriptions Analysis*, *Retention
 Analysis*, *MRR Breakdown*, and *MRR Analysis*.
 
-Each page shares common elements with the others, as well as unique elements.
+Each report is viewed in its own dedicated reporting page, and shares common elements with the others, as well as unique elements.
 
 Reporting page elements
 =======================
@@ -35,8 +35,8 @@ the search criteria. Multiple filters can be added to a single search.
 - :guilabel:`Paused`: Show subscriptions that are currently in the *Paused* stage.
 - :guilabel:`Churned`: Show subscriptions that are currently marked *Churned*.
 - :guilabel:`To renew`: Show subscriptions that are currently marked *To renew*.
-- :guilabel:`Recurring`: Show recurring subscriptions.
-- :guilabel:`Non-recurring`: Show non-recurring subscriptions.
+- :guilabel:`Recurring`: Shows subscriptions that renew at specific intervals.
+- :guilabel:`Non-recurring`: Shows one-time subscriptions.
 - :guilabel:`First contract date`: Show subscriptions with a specific first contract date.
 - :guilabel:`Next Invoice Date`: Show subscriptions with a specific next invoice date.
 - :guilabel:`End Date`: Show subscriptions with a specific end date.
