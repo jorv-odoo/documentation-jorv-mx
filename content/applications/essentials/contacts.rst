@@ -31,7 +31,8 @@ In the :icon:`fa-envelope` :guilabel:`Email` field, enter the email address with
 :icon:`fa-phone` :guilabel:`Phone` field, enter the contact's phone number. Enter the
 :guilabel:`Address` of the contact. Finally, enter the :guilabel:`Tax Identification Number (TIN)`
 the contact uses for tax and accounting purposes. If the contact is not subject to taxation, a `/`
-may be entered in this field.
+may be entered in this field. If it's necessary to add the DUNS number to the contact, this can be
+added by clicking the :icon:`fa-plus` button.
 
 Additional fields
 -----------------
@@ -59,30 +60,32 @@ cover a vendor company, contacts added through the :guilabel:`Contacts` tab can 
 as employees of that company.
 
 This can also be used to associate multiple addresses with the current contact form. To do so, click
-:guilabel:`Add Contact` in the :guilabel:`Contacts` tab. Doing so brings up the :guilabel:`Create
-Contact` form, in which additional addresses can be configured as regular contacts, addressess for
-invoices and deliveries, and other needs.
+:guilabel:`Add Related Contacts` in the :guilabel:`Contacts` tab. Doing so brings up the
+:guilabel:`Create Related Contacts` form, in which additional addresses can be configured as regular
+contacts, addressess for invoices and deliveries, and other needs.
 
-On the :guilabel:`Create Contact` pop-up form, select one of the following options:
+On the :guilabel:`Create Related Contacts` pop-up form, select one of the following options:
 
 - :guilabel:`Contact`: Adds another contact to the existing contact form.
 - :guilabel:`Invoice`: Adds a specific invoice address to the existing contact form.
 - :guilabel:`Delivery`: Adds a specific delivery address to the existing contact form.
+- :guilabel:`FACe Center`: Adds a specific delivery address for a FACe Center to the existing
+  contact form.
 - :guilabel:`Other`: Adds an alternate address to the existing contact form.
 
 .. image:: contacts/create-contact-window.png
    :alt: Create a new contact or address on a contact form.
 
 Once an option is selected, enter the corresponding contact information that should be used for the
-specified address type. Odoo will reference invoice and delivery addresses during relevant parts of
-the sales process.
+specified address type. Odoo references invoice and delivery addresses during relevant parts of the
+sales process.
 
 Sales & Purchase tab
 --------------------
 
 The :guilabel:`Sales & Purchase` tab only appears when the **Sales**, **Purchase**, or **Point of
-Sale** applications are installed. Each of these apps will add another section to this tab when they
-are installed.
+Sale** applications are installed. Each of these apps adds another section to this tab when
+installed.
 
 The :guilabel:`Fiscal Position` can be set on the :guilabel:`Sales & Purchases` tab. Select a
 :guilabel:`Fiscal Position` from the drop-down menu.
@@ -99,7 +102,7 @@ Create a new :guilabel:`Salesperson` by typing the user's name and making the ap
 A :guilabel:`Pricelist` or :guilabel:`Payment Terms` can also be set, if needed. Select the
 :guilabel:`Pricelist` drop-down menu to choose the appropriate :guilabel:`Pricelist`. Click the
 drop-down menu next to :guilabel:`Payment Terms` and change it to one of the preselected
-:guilabel:`Payment Terms` or :guilabel:`Create` a new one.
+:guilabel:`Payment Terms` or :guilabel:`Search more...` to find others or create a new one.
 
 Click into the :guilabel:`Payment Method` field to select an option from the drop-down menu.
 
@@ -117,7 +120,7 @@ identify this contact.
 Purchase section
 ~~~~~~~~~~~~~~~~
 
-Under the :guilabel:`Purchase` heading, select how Group :abbr:`RFQs (requests for quotations)` for
+Under the :guilabel:`Purchase` heading, select how :abbr:`Group RFQs` (requests for quotations) for
 this contact should be grouped together:
 
 - :guilabel:`On Order`: Replenishment needs are grouped together except for :abbr:`MTO (made to
@@ -128,8 +131,7 @@ this contact should be grouped together:
   week or week day.
 - :guilabel:`Always`: Replenishment needs are always grouped together.
 
-Select a default :guilabel:`Buyer` if the :abbr:`RFQs (requests for quotation)` should always be
-assigned to the same user.
+Select a default :guilabel:`Buyer` if the RFQs should always be assigned to the same user.
 
 Specify :guilabel:`Payment Terms`, a preferred :guilabel:`Payment Method`, and :guilabel:`1099 Box`
 information here. A :guilabel:`Receipt Reminder` can be set here, as well. Select a
@@ -163,11 +165,8 @@ can add any related :guilabel:`Bank accounts` or set default accounting journals
 partners may have :guilabel:`Auto-post bills` enabled, allowing for bills to post automatically,
 never, or after 3 validations without edits.
 
-Under the :ref:`Invoice Follow-Ups <accounting/follow_up/follow-ups-for-one-customer>` heading, the
-:guilabel:`Follow-up Status` indicates if the contact currently has any overdue payments. To
-configure :guilabel:`Reminders` for this contact, use the radio buttons to select either
-:guilabel:`Automatic` or :guilabel:`Manual` reminders, as well as schedule the :guilabel:`Next
-reminder`. A user can be set to be :guilabel:`Responsible` for manual follow-ups here as well.
+Under the :guilabel:`CUSTOMER INVOICES` heading, the :guilabel:`Peppol ID` field is used for
+relevant tax identification information.
 
 .. _contacts/partner-assignment:
 
@@ -176,11 +175,8 @@ Partner Assignment tab
 
 Next is the :guilabel:`Partner Assignment` tab, which by default includes a :guilabel:`Geolocation`
 section and other partner options, including :guilabel:`Partner Activation` and :guilabel:`Partner
-Review` configurations. These are **only** present when the *Resellers* module is installed.
-
-.. seealso::
-   Follow the :doc:`Resellers documentation <../sales/crm/track_leads/resellers>` for more
-   information on publishing partners on the website.
+Review` configurations. These are **only** present when the
+:doc:`Resellers<../sales/crm/track_leads/resellers>` module is installed.
 
 Notes tab
 ---------
@@ -192,9 +188,9 @@ UBO tab
 -------
 
 The UBO (Ultimate Beneficial Owner) tab contains a snapshot of the *Holdings* information from the
-:guilabel:`Equity` app, as well as information for the individual contact. The fields visible here
-may change depending on the other apps installed in the Odoo database, as well. The :guilabel:`UBO`
-tab is **only** present when the **Equity** app is installed.
+**Equity** app, as well as information for the individual contact. The fields visible here may
+change depending on the other apps installed in the Odoo database, as well. The :guilabel:`UBO` tab
+is **only** present when the **Equity** app is installed.
 
 To request the information required for the :abbr:`UBO (Ultimate Beneficial Owner)` tab, click the
 :icon:`fa-cog` :guilabel:`Action` icon, then select :guilabel:`Request UBO Form` to send an email to
@@ -207,11 +203,9 @@ At the top of the contact form, some additional *smart buttons* may be available
 
 Here, Odoo displays a variety of records related to this contact that were created within other
 apps. Odoo integrates information from every single one of its apps, so there may be multiple smart
-buttons that appear automatically in this section.
-
-.. example::
-   For example, there is a :guilabel:`Sales` smart button, where all the sales orders and quotations
-   related to this customer from the *Sales* app are accessible.
+buttons that appear automatically in this section. For example, there is a :guilabel:`Sales` smart
+button, where all the sales orders and quotations related to this customer from the **Sales** app
+are accessible.
 
 Deliveries, documents, loyalty cards, and direct debits are *also* linked to smart buttons, should
 there be any outstanding/on-file for this contact.
@@ -219,22 +213,50 @@ there be any outstanding/on-file for this contact.
 If the contact is a partner, the user can visit their partner page on the Odoo-built website by
 clicking the :guilabel:`Go to Website` smart button.
 
+Views
+=====
+
+The **Contacts** app's dashboard offers five different views to help manage your contacts at a
+glance. These views are:
+
+- :icon:`oi-view-list` :guilabel:`List`: Displays contacts in a detailed list, allowing for easy
+  viewing of detailed individual records, including graphical representations of the smart buttons
+  that appear on each contact's form. This is the default view upon opening the app.
+- :icon:`oi-view-kanban` :guilabel:`Kanban`: Displays contacts as tiles resembling business cards.
+  This view presents the same information as the list view, but in a more visual format. It also
+  shows any tags associated with a contact, which are not visible in :guilabel:`List` view.
+- :icon:`fa-map-marker` :guilabel:`Map`: Displays a map with pins for contacts with address
+  information on their form. All contacts, including those without address information, are
+  displayed in a sidebar. Pins on the map may be moused over to highlight the corresponding contact
+  in the sidebar. The forms of contacts may be opened by clicking them in the sidebar. Addresses
+  associated with more than one contact have a number on them to denote how many contacts have that
+  location on their forms.
+- :icon:`fa-share-alt fa-rotate-90` :guilabel:`Hierarchy`: Displays contacts as tiles resembling
+  business cards, similar to the Kanban view. This view adds a :guilabel:`# Contacts` button to
+  contacts that have other records associated with them. When clicked, this button rearranges the
+  page to showcase the contact information for those associated records, making it easy to view at a
+  glance which contacts are employees or otherwise affiliated with each other.
+- :icon:`fa-clock-o` :guilabel:`Activities`: Displays a grid of all contacts with associated
+  upcoming activities. Activities can also be scheduled and managed from within this view and are
+  tracked on the contact's chatter. Please note, this view does not directly interface with apps
+  such as the **CRM** app, since those apps may be referencing **Contact** app data, but tracking
+  something separate, such as *Opportunities*.
+
 Archive contacts
 ================
 
 If a user decides they no longer want to have this contact active, the record can be archived. To do
-that, go to the :icon:`fa-cog` :guilabel:`Actions` menu at the top of the contact form, and click
-:icon:`fa-inbox` :guilabel:`Archive`.
+that, click into an individual contact in any of the views, or select multiple contacts at once in
+:guilabel:`List` view. Click the :icon:`fa-cog` :guilabel:`Actions` menu and click :icon:`fa-inbox`
+:guilabel:`Archive`. Then, click the :guilabel:`Archive` button in the resulting
+:guilabel:`Confirmation` pop-up window.
 
-Then, click :guilabel:`Archive` from the resulting :guilabel:`Confirmation` pop-up window.
-
-With this contact successfully archived, as indicated by a banner at the top of the contact form,
-they do not show up in the main contacts page, but they can still be searched for with the
-:guilabel:`Archived` filter.
+Archived contacts can be searched for with the :guilabel:`Archived` filter in the search bar.
+Archived contacts have an :guilabel:`ARCHIVED` banner denoting their status.
 
 .. tip::
-   To unarchive contacts, just click the :icon:`fa-cog` :guilabel:`Actions` menu again at the top of
-   the archived contact form, and click :guilabel:`Unarchive`. Upon doing so, the
+   To unarchive contacts, just click into the contact or select it and use the :icon:`fa-cog`
+   :guilabel:`Actions` menu again and click :guilabel:`Unarchive`. Upon doing so, the
    :guilabel:`Archived` banner is removed and the contact is restored.
 
 .. seealso::
